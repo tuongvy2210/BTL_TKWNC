@@ -11,16 +11,13 @@
                 <form action="{{ route('orders.checkout',$room->orders()->where('checkout_at', null)->first()->id) }}"
                     method="post">
                     @csrf
-                    <div class="form-group mb-3">
-                        <label for="" class="form-label">Khách</label>
-                        <select name="customer_id" id="" class="form-control" disabled>
-                            @foreach ($customers as $customer)
-                                <option value="{{ $customer->id }}">{{ $customer->fullname }} - {{ $customer->phone }} -
-                                    {{ $customer->address }}</option>
-                            @endforeach
-                        </select>
-                    </div>
                     <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label">Khách</label>
+                                <p>{{ $room->orders()->where('checkout_at', null)->first()->customer->fullname }}</p>
+                            </div>
+                        </div>
                         <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label for="" class="form-label">Giờ thuê</label>
