@@ -23,7 +23,7 @@
                     <tbody>
                         @foreach ($customers as $index => $customer)
                             <tr>
-                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $customer->id }}</td>
                                 <td>{{ $customer->fullname }}</td>
                                 <td>{{ $customer->phone }}</td>
                                 <td>{{ $customer->address }}</td>
@@ -37,6 +37,9 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+            <div class="d-flex justify-content-end">
+                {{ $customers->links() }}
             </div>
         </div>
     </div>
@@ -65,9 +68,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="d-flex justify-content-end">
-                    {{ $customers->links() }}
-                </div>
+               
             </div>
         </div>
     @endforeach

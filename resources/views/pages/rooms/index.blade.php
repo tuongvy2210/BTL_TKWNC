@@ -23,7 +23,7 @@
                     <tbody>
                         @foreach ($rooms as $index => $room)
                             <tr>
-                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $room->id }}</td>
                                 <td>{{ $room->name }}</td>
                                 <td>{{ $room->type->name }}</td>
                                 <td>{{ number_format($room->price) }}</td>

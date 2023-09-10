@@ -95,7 +95,7 @@
                             <tbody>
                                 @foreach ($room->orders()->where('checkout_at', null)->first()->order_details as $index => $order_detail)
                                     <tr>
-                                        <td>{{ $index + 1 }}</td>
+                                        <td>{{ $order_detail->id }}</td>
                                         <td>{{ $order_detail->service->name }}</td>
                                         <td><img src="{{ asset('storage/' . $order_detail->service->image_url) }}"
                                                 alt="" height="100"></td>

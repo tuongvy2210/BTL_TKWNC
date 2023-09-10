@@ -23,7 +23,7 @@
                     <tbody>
                         @foreach ($services as $index => $service)
                             <tr>
-                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $service->id }}</td>
                                 <td>{{ $service->name }}</td>
                                 <td>{{ $service->price }}</td>
                                 <td><img src="{{ asset('storage/' . $service->image_url) }}" alt="" height="100"></td>
@@ -37,6 +37,9 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+            <div class="d-flex justify-content-end">
+                {{ $services->links() }}
             </div>
         </div>
     </div>
@@ -65,9 +68,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="d-flex justify-content-end">
-                    {{ $services->links() }}
-                </div>
+                
             </div>
         </div>
     @endforeach

@@ -23,7 +23,7 @@
                     <tbody>
                         @foreach ($orders as $index => $order)
                             <tr>
-                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $order->id }}</td>
                                 <td>{{ $order->customer->fullname }}</td>
                                 <td>{{ $order->room->name }}</td>
                                 <td>{{ $order->created_at }}</td>

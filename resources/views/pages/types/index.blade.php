@@ -21,7 +21,7 @@
                     <tbody>
                         @foreach ($types as $index => $type)
                             <tr>
-                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $type->id }}</td>
                                 <td>{{ $type->name }}</td>
                                 <td>{{ $type->created_at }}</td>
                                 <td>
